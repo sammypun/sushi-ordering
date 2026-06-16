@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: rgb(118, 25, 25);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.wrapper-history {
+    background-color: white;
+    border-radius: 20px;
+    padding: 40px;
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.back-arrow {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: #ffa500dd;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 32px;
+    color: black;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.back-arrow:hover {
+    background-color: rgb(255, 190, 70);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.header h1 {
+    color: black;
+    font-size: 36px;
+    font-weight: 200px;
+    margin: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    margin-bottom: 30px;
+    color: black;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f5f5f5;
+    font-weight: normal;
+}
+
+input[type="checkbox"] {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    border: 2px solid black;
+    margin: 0 auto;
+    display: block;
+    cursor: pointer;
+}
+
+.check-bill-button {
+    display: block;
+    width: 200px;
+    padding: 15px 30px;
+    background-color: #ffa500dd;
+    color: black;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 25px;
+    border: none;
+    text-decoration: none !important;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 20px auto 0;
+    transition: background-color 0.3s;
+}
+
+.check-bill-button:hover {
+    background-color: rgb(255, 190, 70);
+    text-decoration: none;
+}
+
+.check-bill-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Modal Styles */
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+.modal.show {
+    display: block;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    min-width: 300px;
+}
+
+.modal h2 {
+    margin-bottom: 20px;
+    color: rgb(118, 25, 25);
+    font-weight: 600;
+}
+
+.modal p {
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.modal-confirm, .modal-cancel {
+    padding: 10px 40px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.modal-confirm {
+    background-color: #ffa500dd;
+    color: black;
+}
+
+.modal-cancel {
+    background-color: black;
+    color: white;
+}
+
+.modal-confirm:hover {
+    background-color: rgb(255, 190, 70);
+}
+
+.modal-cancel:hover {
+    background-color: rgb(97, 0, 0);
+}
+
+.status-served {
+    color: #4CAF50;
+    font-weight: 500;
+}
+
+.paid-order {
+    background-color: #f5f5f5;
+}
+
+.checkbox-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

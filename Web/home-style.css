@@ -1,0 +1,479 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: rgb(118, 25, 25);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    background-color: rgb(255, 255, 255);
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    margin: 0 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    font-weight: 450;
+}
+
+.category-card {
+    background-color: transparent;
+    transition: transform 0.3s;
+    position: relative;
+    color: #333;
+}
+
+.category-card:hover {
+    background-color: rgb(222, 222, 222);
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+/* New styles for active category */
+.category-card a.active {
+    color: #ffa500;
+    font-weight: 600;
+}
+
+.category-card:hover a.active {
+    color: #ffa500;
+}
+
+/* Menu item styles */
+.menu-item {
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.menu-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border-radius: 15px;
+    gap: 10px;
+}
+
+.menu-item h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    color: black;
+}
+
+.menu-item .price {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+}
+
+.content {
+    display: flex;
+    flex-grow: 1;
+}
+
+.right-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(118, 25, 25);
+    flex: 3;
+    gap: 20px;
+}
+
+.left-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(118, 25, 25);
+    flex: 7;
+}
+
+.menu-catalogue {
+    background-color: white;
+    border-radius: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+    padding: 20px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+grid-item {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #f5f5f5;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    min-height: 200px;
+    max-height: 250px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    color: black;
+}
+
+.prev-btn, .next-btn {
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background: rgb(64, 64, 64);
+}
+
+.prev-btn:disabled, .next-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.page-indicator {
+    margin: 0 20px;
+}
+
+/* Action buttons container */
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 0 20px 0;
+    gap: 20px;
+}
+
+.action-button-link {
+    flex: 1;
+    text-decoration: none;
+}
+
+.action-buttons button {
+    width: 100%;
+    background-color: #ffa500dd;
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.action-buttons button:hover {
+    background-color: rgb(255, 190, 70);
+}
+
+/* Table styles */
+table {
+    width: 80%;
+    border-collapse: collapse;
+    background-color: white;
+    text-align: center;
+}
+
+th {
+    background-color: #bbb7b7;
+    color: black;
+    font-weight: bold;
+    padding: 20px;
+    border: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+td {
+    padding: 20px;
+    border: 1px solid #ddd;
+    color: black;
+}
+
+.add-drop-buttons button {
+    background-color: #f0f0f0;
+    font-size: 16px;
+    padding: 5px 10px;
+    border: 1px solid black;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: background-color 0.3s;
+}
+
+.add-drop-buttons button:hover {
+    background-color: #ddd;
+}
+
+.cancel-btn {
+    background-color: black;
+    color: white;
+    font-size: 14px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: opacity 0.3s, background-color 0.3s;
+}
+
+.cancel-btn:hover {
+    opacity: 0.8;
+    background-color: rgb(97, 0, 0);
+}
+
+.order-button {
+    margin-top: 10px;
+    background-color: #ffa500dd;
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 20px 180px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 80%;
+}
+
+.order-button:hover {
+    background-color: rgb(255, 190, 70);
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    min-width: 300px;
+}
+
+.modal h2 {
+    margin-bottom: 20px;
+    color: rgb(118, 25, 25);
+    font-weight: 600;
+}
+
+.modal p {
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.modal-confirm, .modal-cancel {
+    padding: 10px 40px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.modal-confirm {
+    background-color: #ffa500dd;
+    color: black;
+}
+
+.modal-cancel {
+    background-color: black;
+    color: white;
+}
+
+.modal-confirm:hover {
+    background-color: rgb(255, 190, 70);
+}
+
+.modal-cancel:hover {
+    background-color: rgb(97, 0, 0);
+}
+
+.user-info {
+    background-color: white;
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.user-info p {
+    color: black;
+    margin: 0;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.user-info-label {
+    color: rgb(118, 25, 25);
+    font-weight: 600;
+}
+
+.logout-link {
+    background-color: #ffa500dd;
+    color: black;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.logout-link:hover {
+    background-color: rgb(255, 190, 70);
+}
+
+body {
+    padding-bottom: 50px;
+}
+
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav li {
+        margin: 5px 0;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 15px;
+    }
+    
+    .grid-item {
+        min-height: 180px;
+    }
+    
+    .menu-item h3 {
+        font-size: 14px;
+    }
+    
+    .menu-item .price {
+        font-size: 12px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .action-buttons button {
+        width: 100%;
+        padding: 15px 20px;
+    }
+
+    .order-button {
+        padding: 15px 40px;
+        width: 90%;
+    }
+
+    table {
+        width: 90%;
+    }
+
+    .user-info {
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .user-info p {
+        font-size: 14px;
+    }
+
+    body {
+        padding-bottom: 70px;
+    }
+}
